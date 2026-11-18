@@ -53,7 +53,7 @@ def write_to_hbase_partition(partition):
     # Connect to HBase Thrift server running on the master node
     connection = happybase.Connection('master', port=9090)
     connection.open()
-    table = connection.table('my_table')
+    table = connection.table('influencers_table_2026')
     for row in partition:
         row_key, column, value = row
         table.put(row_key, {column: value})
